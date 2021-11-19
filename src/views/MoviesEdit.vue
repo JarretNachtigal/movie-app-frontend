@@ -33,6 +33,7 @@ export default {
         .then((response) => {
           console.log("movie updated", response.data);
           this.currentMovie = {};
+          this.$router.push("/movies");
         })
         .catch((error) => {
           console.log("edit error", error.response);
@@ -41,6 +42,7 @@ export default {
     moviesDestroy: function () {
       axios.delete(`http://localhost:3000/movies/${this.currentMovie.id}`).then((response) => {
         console.log("destroyed", response.data);
+        this.$router.push("/movies");
       });
     },
   },

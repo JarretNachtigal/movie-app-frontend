@@ -25,6 +25,7 @@ export default {
     moviesNew: function () {
       axios.post("http://localhost:3000/movies", this.newMovieParams).then((response) => {
         console.log("new movie", response.data);
+        this.$router.push("/movies");
       });
     },
   },
